@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: final_district_performance
+    description: >
+      Combines law enforcement call response times and call volumes to provide 
+      performance insights by police district.
+    columns:
+      - name: police_district
+        description: Name of the police district handling the dispatch
+        tests:
+          - not_null
+
+      - name: avg_response_time_min
+        description: Average total response time (from received to on-scene) per district
+
+      - name: district_rank
+        description: Rank of each district by fastest average response time (1 = best)
+
+      - name: total_cases
+        description: Total number of CAD calls handled by the district
+
+      - name: id
+        description: Unique identifier for each dispatch call
+
+      - name: cad_number
+        description: Computer Aided Dispatch number identifying the case
+
+      - name: received_datetime
+        description: Timestamp when the call was received
+
+      - name: dispatch_datetime
+        description: Timestamp when the call was dispatched
+
+      - name: onscene_datetime
+        description: Timestamp when officers arrived on the scene
+
+      - name: close_datetime
+        description: Timestamp when the case was closed
+
+      - name: dispatch_to_received_min
+        description: Minutes between call received and dispatch
+
+      - name: enroute_to_dispatch_min
+        description: Minutes between dispatch and officers enroute
+
+      - name: onscene_to_enroute_min
+        description: Minutes between officers enroute and arrival on scene
+
+      - name: total_incident_duration_min
+        description: Total minutes from received to close of the case

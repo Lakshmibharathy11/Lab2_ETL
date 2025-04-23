@@ -1,0 +1,26 @@
+[2025-04-23T05:18:08.373+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-23T05:18:08.389+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-23T05:17:51.239763+00:00 [queued]>
+[2025-04-23T05:18:08.398+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-23T05:17:51.239763+00:00 [queued]>
+[2025-04-23T05:18:08.399+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-04-23T05:18:08.412+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_snapshot> on 2025-04-23 05:17:51.239763+00:00
+[2025-04-23T05:18:08.418+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_snapshot', 'manual__2025-04-23T05:17:51.239763+00:00', '--job-id', '64', '--raw', '--subdir', 'DAGS_FOLDER/build_elt_with_dbt.py', '--cfg-path', '/tmp/tmpl6_2dn5x']
+[2025-04-23T05:18:08.421+0000] {standard_task_runner.py:105} INFO - Job 64: Subtask dbt_snapshot
+[2025-04-23T05:18:08.421+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1468) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-04-23T05:18:08.422+0000] {standard_task_runner.py:72} INFO - Started process 1469 to run task
+[2025-04-23T05:18:08.464+0000] {task_command.py:467} INFO - Running <TaskInstance: BuildELT_dbt.dbt_snapshot manual__2025-04-23T05:17:51.239763+00:00 [running]> on host 0b555a0ed01e
+[2025-04-23T05:18:08.542+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2025-04-23T05:17:51.239763+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-23T05:17:51.239763+00:00'
+[2025-04-23T05:18:08.543+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-23T05:18:08.556+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-04-23T05:18:08.558+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt snapshot --profiles-dir /opt/***/dbt --project-dir /opt/***/dbt']
+[2025-04-23T05:18:08.565+0000] {subprocess.py:86} INFO - Output:
+[2025-04-23T05:18:11.041+0000] {subprocess.py:93} INFO - [0m05:18:11  Running with dbt=1.6.18
+[2025-04-23T05:18:11.755+0000] {subprocess.py:93} INFO - [0m05:18:11  Registered adapter: snowflake=1.6.0
+[2025-04-23T05:18:11.958+0000] {subprocess.py:93} INFO - [0m05:18:11  Found 2 tests, 2 models, 2 sources, 0 exposures, 0 metrics, 375 macros, 0 groups, 0 semantic models
+[2025-04-23T05:18:11.961+0000] {subprocess.py:93} INFO - [0m05:18:11
+[2025-04-23T05:18:11.961+0000] {subprocess.py:93} INFO - [0m05:18:11  Nothing to do. Try checking your model configs and model specification args
+[2025-04-23T05:18:12.628+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-04-23T05:18:12.652+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-23T05:18:12.653+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=BuildELT_dbt, task_id=dbt_snapshot, run_id=manual__2025-04-23T05:17:51.239763+00:00, execution_date=20250423T051751, start_date=20250423T051808, end_date=20250423T051812
+[2025-04-23T05:18:12.703+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-23T05:18:12.721+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-23T05:18:12.725+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,42 @@
+version: 2
+
+sources:
+  - name: raw
+    database: dev
+    schema: raw
+    description: "Schema which stores raw tables ingested via ETL"
+    tables:
+      - name: law_enforcement_calls
+        identifier: law_enforcement_calls
+        description: "Raw call data with timestamps including received, dispatched, on-scene, and closed"
+        columns:
+          - name: cad_number
+            description: Unique CAD case identifier
+            tests:
+              - not_null
+
+          - name: police_district
+            description: District that handled the call
+            tests:
+              - not_null
+
+          - name: received_datetime
+            description: Timestamp when the call was received
+
+          - name: dispatch_datetime
+            description: Timestamp when the call was dispatched
+
+          - name: onscene_datetime
+            description: Timestamp when the unit arrived on scene
+
+          - name: close_datetime
+            description: Timestamp when the case was closed
+
+  - name: analytics
+    database: dev
+    schema: analytics
+    description: "Schema which stores transformed analytics models"
+    tables:
+      - name: district_performance
+        identifier: final_district_performance
+        description: "Analytics model ranking police districts by average response time and total cases"
